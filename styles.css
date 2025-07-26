@@ -1,0 +1,70 @@
+:root {
+    --pad: clamp(0.5rem, 3vw, 2.5rem);
+    --rad: 15px;
+    --gap: clamp(1rem, 4vw, 2.8rem);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container Logic*/
+@container Layout (max-width:400px) {
+    .hero-container{
+        grid-template-columns: 1fr !important;
+    }
+    .hero-visual img{
+        height: 50cqh !important;
+    }
+}
+@container Layout (max-width:768px) {
+    .hero-container{
+        grid-template-columns: auto !important;
+    }
+}
+@container Layout (min-width:768px) and (max-width:1000px) {
+    .hero-container{
+        grid-template-columns: auto !important;
+    }
+    .hero-text, .hero-visual{
+        width: clamp(500px,55cqi,650px);
+    }
+   .hero-visual img{
+        width: 50cqi !important;
+        height: 50cqh !important;
+    }
+}
+
+/* Hero Section*/
+.hero {
+    container-type: inline-size;
+    container-name: Layout;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    gap: var(--gap);
+    min-height: 1px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    padding: var(--pad);
+    gap: var(--gap);
+    justify-content: space-evenly;
+}
+
+.hero-visual {
+    padding: var(--pad);
+
+}
+
+.hero-visual img {
+    width: clamp(300px, 90vw, 40cqi);
+    height: clamp(500px, 90vh, 800px);
+    border-radius: var(--rad);
+}
