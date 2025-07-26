@@ -66,5 +66,6 @@ body {
 .hero-visual img {
     width: clamp(300px, 90vw, 40cqi);
     height: clamp(500px, 90vh, 800px);
+    min-height: 400px;
     border-radius: var(--rad);
 }
