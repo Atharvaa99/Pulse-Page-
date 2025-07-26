@@ -6,9 +6,9 @@
     --clr-muted: #777;
     --clr-shadow: rgba(0, 0, 0, 0.1);
 
-    --pad: clamp(0.5rem, 3vw, 2.5rem);
+    --pad: clamp(0.5rem, 3vw, 2rem);
     --rad: 15px;
-    --gap: clamp(1rem, 4vw, 2.8rem);
+    --gap: clamp(1rem, 4vw, 2rem);
 }
 
 /* Dark Mode*/
@@ -43,6 +43,9 @@ body {
     .hero-container {
         grid-template-columns: 1fr !important;
     }
+    .hero-text{
+        max-width: 85cqw;
+    }
 
     .hero-visual img {
         height: 50cqh !important;
@@ -53,7 +56,9 @@ body {
     .hero-container {
         grid-template-columns: auto !important;
     }
-
+     .hero-text{
+        max-width: 85cqw;
+    }
     .hero-visual img {
         max-height: 500px;
     }
