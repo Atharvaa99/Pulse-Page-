@@ -4,43 +4,76 @@
     --gap: clamp(1rem, 4vw, 2.8rem);
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
+}
+li::marker{
+    content: "";
 }
 body {
+    overflow-x:hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Container Logic*/
 @container Layout (max-width:400px) {
-    .hero-container{
+    .hero-container {
         grid-template-columns: 1fr !important;
     }
-    .hero-visual img{
+
+    .hero-visual img {
         height: 50cqh !important;
     }
 }
+
 @container Layout (max-width:768px) {
-    .hero-container{
+    .hero-container {
         grid-template-columns: auto !important;
+    }
+    .hero-visual img{
+        max-height: 500px;
     }
 }
+
 @container Layout (min-width:768px) and (max-width:1000px) {
-    .hero-container{
+    .hero-container {
         grid-template-columns: auto !important;
     }
-    .hero-text, .hero-visual{
-        width: clamp(500px,55cqi,650px);
+
+    .hero-text,
+    .hero-visual {
+        width: clamp(500px, 55cqi, 650px);
     }
-   .hero-visual img{
+
+    .hero-visual img {
         width: 50cqi !important;
         height: 50cqh !important;
     }
 }
 
+@container Layout (min-width:1200px) {
+    .hero-visual img {
+        width: 550px !important;
+        height: 750px !important;
+    }
+}
+@container Pricing-layout (max-width:768px){
+    .card-container{
+        grid-template-columns: 1fr !important;
+    }
+    .card{
+        width: 280px !important;
+    }
+}
+@container Pricing-layout (min-width:768px) and (max-width:1000px){
+    .card-container{
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
 /* Hero Section*/
 .hero {
-    height: 100vh;
+    height: max-content;
+    min-height: 100vh;
     container-type: inline-size;
     container-name: Layout;
     display: grid;
@@ -70,8 +103,41 @@ body {
 }
 
 .hero-visual img {
-    width: clamp(300px, 90vw, 40cqi);
-    height: clamp(500px, 90vh, 800px);
+    width: clamp(300px, 80vw, 450px);
+    height: clamp(500px, 90vh, 700px);
     min-height: 400px;
     border-radius: var(--rad);
+}
+
+/* Pricing Section*/
+.pricing {
+    container-type: inline-size;
+    container-name: Pricing-layout;
+    min-height: max-content;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: var(--gap);
+    align-items: center;
+}
+
+.card-container{
+    text-align: left;
+    gap: var(--gap);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content:space-between;
+}
+.card{
+    width: clamp(200px,45cqi,270px);
+    height: clamp(270px,40cqi,300px);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    gap: var(--gap);
+    padding: clamp(0.8rem,3cqi,1rem);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
