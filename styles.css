@@ -124,15 +124,18 @@ body {
 }
 
 .card-container{
+    width: 83vw;
     text-align: left;
     gap: var(--gap);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    justify-content:space-between;
+    justify-content:center;
+    align-items: center;
 }
 .card{
-    width: clamp(200px,45cqi,270px);
-    height: clamp(270px,40cqi,300px);
+    width: clamp(200px,25cqi,30cqi);
+    height: clamp(270px,25cqi,30cqi);
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
