@@ -4,6 +4,9 @@
     --gap: clamp(1rem, 4vw, 2.8rem);
 }
 
+html{
+    scroll-behavior:smooth;
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -37,8 +40,11 @@ body {
 
 /* Hero Section*/
 .hero {
+    height: 100vh;
     container-type: inline-size;
     container-name: Layout;
+    display: grid;
+    justify-content: space-evenly;
 }
 
 .hero-container {
@@ -60,7 +66,7 @@ body {
 
 .hero-visual {
     padding: var(--pad);
-
+    text-align: center;
 }
 
 .hero-visual img {
