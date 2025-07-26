@@ -43,7 +43,8 @@ body {
     .hero-container {
         grid-template-columns: 1fr !important;
     }
-    .hero-text{
+
+    .hero-text {
         max-width: 85cqw;
     }
 
@@ -56,13 +57,16 @@ body {
     .hero-container {
         grid-template-columns: auto !important;
     }
-     .hero-text{
+
+    .hero-text {
         max-width: 85cqw;
     }
+
     .hero-visual img {
         max-height: 500px;
     }
-    .hero-cta-a{
+
+    .hero-cta-a {
         width: 100px;
     }
 }
@@ -77,7 +81,8 @@ body {
         max-width: 40cqi !important;
         max-height: 60cqh !important;
     }
-    .hero-cta-a{
+
+    .hero-cta-a {
         width: 150px;
     }
 }
@@ -136,6 +141,7 @@ body {
     justify-content: space-evenly;
     box-shadow: 0 0 20px var(--clr-shadow);
     border-radius: var(--rad);
+    animation: fadeInL 1s ease;
 }
 
 .hero-text h1 {
@@ -164,8 +170,10 @@ body {
     height: clamp(500px, 90vh, 700px);
     min-height: 400px;
     border-radius: var(--rad);
+    animation: fadeInR 1s ease;
 }
-.hero-cta{
+
+.hero-cta {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -184,6 +192,7 @@ body {
     text-align: center;
     gap: var(--gap);
     align-items: center;
+    animation: fadeUp 1s ease-out forwards;
 }
 
 .pricing h2 {
@@ -214,6 +223,13 @@ body {
     padding: clamp(0.8rem, 3cqi, 1rem);
     box-shadow: 0 0 10px var(--clr-shadow);
     border-radius: var(--rad);
+    animation: fadeUp 1s ease-out forwards;
+    transition: all 0.5s ease ;
+    will-change: transform, box-shadow;
+}
+.card:hover{
+    animation: glow 1s infinite ease;
+    transform: scale(1.02);
 }
 
 .plan-title {
@@ -237,32 +253,41 @@ body {
     font-size: clamp(1rem, 2cqi, 2.3cqh);
     color: var(--clr-muted);
 }
-.price-toogle{
+
+.price-toogle {
     user-select: none;
     font-size: clamp(1.4rem, 3cqi, 2.8cqh);
     color: var(--clr-text);
     background-color: var(--clr-accent);
     padding: 1rem;
     border-radius: var(--rad);
-    cursor: pointer ;
-}
-.price-toogle span{
     cursor: pointer;
 }
-.plan-cta{
+
+.price-toogle span {
+    cursor: pointer;
+}
+
+.plan-cta {
     width: 200px;
     position: relative;
     text-align: center
 }
+/*Card animation delay*/
+
+.card:nth-child(1){animation-delay :0.2s}
+.card:nth-child(2){animation-delay :0.4s}
+.card:nth-child(3){animation-delay :0.6s}
+
 /* Common CTA Styling*/
-.cta{
+.cta {
     background-color: var(--clr-accent);
     padding: 0.8rem;
     text-decoration: none;
     color: var(--clr-text);
-    border-radius: 10px ;
+    border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
-    font-size: clamp(0.8rem,1.8cqi,2cqh);
+    font-size: clamp(0.8rem, 1.8cqi, 2cqh);
 }
 
 /* Pricing Toogle */
@@ -289,4 +314,53 @@ body {
 
 .price-toogle:has(#toogle:checked)~.card-container .card #monthly {
     display: none;
+}
+
+/* Animations */
+
+@keyframes fadeInL {
+    from {
+        transform: translateX(-100%) scale(1.2);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInR {
+    from {
+        transform: translateX(100%) scale(1.2);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 1px var(--clr-accent);
+    }
+    50% {
+        box-shadow: 0 0 2px var(--clr-accent);
+    }
+    100% {
+        box-shadow: 0 0 1px var(--clr-accent);
+    }
 }
