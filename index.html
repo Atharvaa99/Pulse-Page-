@@ -35,11 +35,19 @@
     </section>
     <section class="pricing" id="pricing-scroll">
         <h2>Pricing Plans</h2>
+         <div class="price-toogle">
+            <label for="toogle">
+            <input type="checkbox" id="toogle" style="display: none;">
+            <span id="monthly">Monthly</span>
+            <span id="yearly"> Yearly</span>
+            </label>
+        </div>
         <div class="card-container">
             <div class="basic-plan card">
                 <div class="plan-title">
                     <h3>Basic Plan </h3>
-                    <p class="price">12$/month</p>
+                    <span class="price" id="yearly"> 120$/year</span>
+                    <span class="price" id="monthly">12$/month</span>
                 </div>
                 <div class="plan-content">
                     <ul>
@@ -55,7 +63,8 @@
             <div class="pro-plan card">
                 <div class="plan-title">
                     <h3>Pro Plan</h3>
-                    <p class="price">29$/month</p>
+                    <span class="price" id="yearly"> 348$/year</span>
+                    <span class="price" id="monthly">29$/month</span>
                 </div>
                 <div class="plan-content">
                     <ul>
@@ -71,7 +80,8 @@
             <div class="enterprise-plan card">
                 <div class="plan-title">
                     <h3>Enterprise Plan</h3>
-                    <p class="price">49$/month</p>
+                    <span class="price" id="yearly"> From 588$/year</span>
+                    <span class="price" id="monthly"> From 49$/month</span>
                 </div>
                 <div class="plan-content">
                     <ul>

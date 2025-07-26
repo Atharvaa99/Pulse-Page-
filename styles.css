@@ -144,3 +144,24 @@ body {
     padding: clamp(0.8rem,3cqi,1rem);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+/* Pricing Toogle */
+
+.price-toogle:has(:not(#toogle:checked)) #yearly{
+    display: none;
+}
+.price-toogle:has(#toogle:checked) #monthly{
+    display: none;
+}
+.price-toogle:has(#toogle:checked) #yearly{
+    display: inline;
+}
+.price-toogle:has(:not(#toogle:checked))  ~ .card-container .card #yearly{
+    display: none;
+}
+.price-toogle:has(#toogle:checked)  ~ .card-container .card #yearly{
+    display: inline;
+}
+.price-toogle:has(#toogle:checked) ~ .card-container .card #monthly{
+    display: none;
+}
